@@ -19,7 +19,7 @@ Constraints:
 import unittest
 #solution
 class Solution(unittest.TestCase):
-    def self_sol(self, s: str) -> int:
+    def self_soln(self, s: str) -> int:
         """
         Given a string s, find the length of the longest substring without repeating characters.
 
@@ -61,15 +61,15 @@ class Solution(unittest.TestCase):
             else:
                 i += 1
         return length
-    
+
     def test_1(self):
-        self.assertEqual(self.lengthOfLongestSubstring("abcabcbb"), 3)
+        self.assertEqual(self.self_soln("abcabcbb"), 3)
 
     def test_2(self):
-        self.assertEqual(self.lengthOfLongestSubstring("bbbbb"), 1)
+        self.assertEqual(self.self_soln("bbbbb"), 1)
 
     def test_3(self):
-        self.assertEqual(self.lengthOfLongestSubstring("pwwkew"), 3)
+        self.assertEqual(self.self_soln("pwwkew"), 3)
 
 if __name__ == "__main__":
     unittest.main()
