@@ -62,17 +62,7 @@ class Solution(unittest.TestCase):
                 i += 1
         return length
     
-    def test_1(self):
-        self.assertEqual(self.self_soln("abcabcbb"), 3)
-
-    def test_2(self):
-        self.assertEqual(self.self_soln("bbbbb"), 1)
-
-    def test_3(self):
-        self.assertEqual(self.self_soln("pwwkew"), 3)
-
-class UserSolutions(unittest.TestCase):
-    def user_sol_1(self, s: str) -> int:
+    def user_soln_1(self, s: str) -> int:
         left = max_length = 0
         char_set = set()
 
@@ -83,7 +73,55 @@ class UserSolutions(unittest.TestCase):
             char_set.add(s[right])
             max_length = max(max_length, right - left + 1)
         return max_length
+    
+    def user_soln_2(self, s:str) -> int:
+        max_length = 0
+        left = 0
+        last_seen = {}
 
+        for right, c in enumerate(s):
+            if c in last_seen and last_seen[c] >= left:
+                left = last_seen[c] + 1
+            last_seen[c] = right
+            max_length = max(max_length, right - left + 1)
+        return max_length
+    
+    def test_1(self):
+        self.assertEqual(self.self_soln("abcabcbb"), 3)
+        self.assertEqual(self.user_soln_1("abcabcbb"), 3)
+        self.assertEqual(self.user_soln_2("abcabcbb"), 3)
+
+    def test_2(self):
+        self.assertEqual(self.self_soln("bbbbb"), 1)
+        self.assertEqual(self.user_soln_1("bbbbb"), 1)
+        self.assertEqual(self.user_soln_2("bbbbb"), 1)
+
+    def test_3(self):
+        self.assertEqual(self.self_soln("pwwkew"), 3)
+        self.assertEqual(self.user_soln_1("pwwkew"), 3)
+        self.assertEqual(self.user_soln_2("pwwkew"), 3)
+
+    def test_4(self):
+        self.assertEqual(self.self_soln(""), 0)
+        self.assertEqual(self.user_soln_1(""), 0)
+        self.assertEqual(self.user_soln_2(""), 0)
+
+    def test_5(self):
+        self.assertEqual(self.self_soln(" "), 1)
+        self.assertEqual(self.user_soln_1(" "), 1)
+        self.assertEqual(self.user_soln_2(" "), 1)
+
+    def test_6(self):
+        self.assertEqual(self.self_soln("au"), 2)
+        self.assertEqual(self.user_soln_1("au"), 2)
+        self.assertEqual(self.user_soln_2("au"), 2)
+
+    def test_7(self):
+        self.assertEqual(self.self_soln("dvdf"), 3)
+        self.assertEqual(self.user_soln_1("dvdf"), 3)
+        self.assertEqual(self.user_soln_2("dvdf"), 3)
+    
+    
 if __name__ == "__main__":
     unittest.main()
     
