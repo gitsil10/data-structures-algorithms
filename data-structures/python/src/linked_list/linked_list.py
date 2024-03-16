@@ -39,7 +39,7 @@ class LinkedList:
             node = node.next
         return nodes
     def print_list(self) -> None:
-        nodes = walk()
+        nodes = self.walk()
         for n in nodes:
             print(f"{n} {'->' if n else ''}")
 
