@@ -62,6 +62,16 @@ class Solution(unittest.TestCase):
                 i += 1
         return length
     
-    
+    def test_1(self):
+        self.assertEqual(self.lengthOfLongestSubstring("abcabcbb"), 3)
+
+    def test_2(self):
+        self.assertEqual(self.lengthOfLongestSubstring("bbbbb"), 1)
+
+    def test_3(self):
+        self.assertEqual(self.lengthOfLongestSubstring("pwwkew"), 3)
+
+if __name__ == "__main__":
+    unittest.main()
     
     
