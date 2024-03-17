@@ -1,5 +1,5 @@
 # Median of Two Sorted Arrays
-Find the median of two sorted arrays
+    Find the median of two sorted arrays
 
 ## Pseudocode
     1. Merge the two arrays
