@@ -31,33 +31,32 @@ SF
   Array A of length N of positive integers
   N > 3
   ------------------------------------------------------------------------------------  
-    time -> O(n)
-    space -> O(1)
+  time -> O(n)
+  space -> O(1)
   
-    start
+  start
   
-    a <- A[0]
-    b <- A[1]
+  a <- A[0]
+  b <- A[1]
     
-    for i <- 2 to N:
-      if A[i] < a:
-        if b > a:
-          b <- a
-        a <- A[i]
+  for i <- 2 to N:
+    if A[i] < a:
+      if b > a:
+        b <- a
+      a <- A[i]
   
-      else if A[i] < b:
-        b <- A[i]
+    else if A[i] < b:
+      b <- A[i]
   
-    return a+b
+  return a+b
   
-    - C implementation
+  - C implementation  
+------------
+  time -> O(1)
+  space -> O(1)
   
-    ------------
-    time -> O(1)
-    space -> O(1)
+  sort(A)
+  return A[0] + A[1]
   
-    sort(A)
-    return A[0] + A[1]
-  
-    - Python implementation
+  - Python implementation
     
