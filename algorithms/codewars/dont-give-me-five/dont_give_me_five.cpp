@@ -6,6 +6,22 @@ using namespace std;
 class Solution {
 public:
     static int dont_give_me_five(int start, int end) {
+        /*
+        @brief Count the number of integers between start and end that do not contain the digit 5
+        @param start: The start of the range
+        @param end: The end of the range
+        @return The number of integers between start and end that do not contain the digit 5
+
+        @note
+        time: O(n)
+        space: O(1)
+
+        @details
+        1. Iterate through the range from start to end
+        2. Convert the integer to a string and check if it contains the digit 5
+        3. If it does not contain the digit 5, increment the count
+        4. Return the count
+        */
         int count = 0;
         for (int i = start; i <= end; i++) {
             if (to_string(i).find('5') == string::npos) {
