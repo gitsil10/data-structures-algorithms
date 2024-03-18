@@ -1,6 +1,8 @@
 /*
 SF
 
+Codewars: Don't give me five!
+Count the number of integers that do not contain the digit 5
 */
 #include <stdio.h>
 #include <stdlib.h>
