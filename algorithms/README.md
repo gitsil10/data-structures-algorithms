@@ -24,12 +24,9 @@ SF
 ## Codewars
 
 ### Sum of two lowest positive integer
-  Returns the sum of the two lowest positive integers in an array of minimum length 4.
+Returns the sum of the two lowest positive integers in an array of minimum length 4.
 
-  Input
-  -----
-  Array A of length N of positive integers
-  N > 3
+  Input -> N > 3 | Array A of length N of positive integers
   ------------------------------------------------------------------------------------  
   time -> O(n)
   space -> O(1)
