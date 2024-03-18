@@ -6,6 +6,7 @@ Count the number of integers that do not contain the digit 5
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int dont_give_me_five(int start, int end);
 int dont_give_me_five_2(int start, int end);
@@ -82,7 +83,7 @@ int dont_give_me_five_2(int start, int end) {
     int count = 0;
     for(int i = start; i <= end; i++) {
         sprintf(buf, "%d", i);
-        if( strchr(buf, '5') == NULL ) count++;
+        if(strchr(buf, '5') == NULL) count++;
     }
     return count;
 }
