@@ -83,6 +83,14 @@ void print_list(node *head) {
     }
 }
 
-
+void free_list(node *head) {
+    node *curr = head;
+    node *next;
+    while (curr != NULL) {
+        next = curr->next;
+        free(curr);
+        curr = next;
+    }
+}
 
 #endif
