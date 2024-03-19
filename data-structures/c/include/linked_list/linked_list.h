@@ -21,7 +21,7 @@ node -> struct | integer data | pointer to the next node
 create -> creates a new node with the given data
 insert -> inserts a new node with the given data at the head of the list
 delete -> deletes the first node with the given data
-print -> prints the list
+print -> prints the list | output
 free -> frees the list | clear memory
 */
 #include <stdio.h>
@@ -32,6 +32,15 @@ free -> frees the list | clear memory
 
 //data
 typedef struct node {
+    /*
+    @brief node struct
+    @details
+    integer data
+    pointer to the next node
+
+    @note
+    space: O(1)
+    */
     int data;
     struct node *next;
 } node;
@@ -45,6 +54,18 @@ void free_list(node *head);
 
 //definitions
 node *create_node(int data) {
+    /*
+    @brief create a new node
+    @param data integer
+    @return node pointer
+
+    @details
+    creates a new node with the given data
+
+    @note
+    time: O(1)
+    space: O(1)
+    */
     node *new_node = (node *)malloc(sizeof(node));
     new_node->data = data;
     new_node->next = NULL;
@@ -52,12 +73,38 @@ node *create_node(int data) {
 }
 
 node *insert_node(node *head, int data) {
+    /*
+    @brief insert a new node
+    @param head node pointer
+    @param data integer
+    @return node pointer
+
+    @details
+    inserts a new node with the given data at the head of the list
+
+    @note
+    time: O(1)
+    space: O(1)
+    */
     node *new_node = create_node(data);
     new_node->next = head;
     return new_node;
 }
 
 node *delete_node(node *head, int data) {
+    /*
+    @brief delete a node
+    @param head node pointer
+    @param data integer
+    @return node pointer
+
+    @details
+    deletes the first node with the given data
+
+    @note
+    time: O(n)
+    space: O(1)
+    */
     node *curr = head;
     node *prev = NULL;
     while (curr != NULL) {
@@ -76,6 +123,17 @@ node *delete_node(node *head, int data) {
 }
 
 void print_list(node *head) {
+    /*
+    @brief output the list
+    @param head node pointer
+
+    @details
+    prints the list
+
+    @note
+    time: O(n)
+    space: O(1)
+    */
     node *curr = head;
     while (curr != NULL) {
         printf("%d ", curr->data);
@@ -84,6 +142,17 @@ void print_list(node *head) {
 }
 
 void free_list(node *head) {
+    /*
+    @brief clear memory
+    @param head node pointer
+
+    @details
+    frees the list
+
+    @note
+    time: O(n)
+    space: O(1)
+    */
     node *curr = head;
     node *next;
     while (curr != NULL) {
