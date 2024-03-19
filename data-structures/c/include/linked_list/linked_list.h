@@ -24,3 +24,10 @@ delete -> deletes the first node with the given data
 print -> prints the list
 free -> frees the list | clear memory
 */
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
+
+#endif
