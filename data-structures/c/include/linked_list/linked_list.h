@@ -57,5 +57,23 @@ node *insert_node(node *head, int data) {
     return new_node;
 }
 
+node *delete_node(node *head, int data) {
+    node *curr = head;
+    node *prev = NULL;
+    while (curr != NULL) {
+        if (curr->data == data) {
+            if (prev == NULL) {
+                head = curr->next;
+            } else {
+                prev->next = curr->next;
+            }
+            free(curr);
+            return head;
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+}
+
 
 #endif
