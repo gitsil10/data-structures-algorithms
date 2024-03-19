@@ -75,5 +75,14 @@ node *delete_node(node *head, int data) {
     }
 }
 
+void print_list(node *head) {
+    node *curr = head;
+    while (curr != NULL) {
+        printf("%d ", curr->data);
+        curr = curr->next;
+    }
+}
+
+
 
 #endif
