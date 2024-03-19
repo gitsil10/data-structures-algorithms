@@ -30,12 +30,18 @@ free -> frees the list | clear memory
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
-//linked list
+//data
 typedef struct node {
     int data;
     struct node *next;
 } node;
 
+//prototypes
+node *create_node(int data);
+node *insert_node(node *head, int data);
+node *delete_node(node *head, int data);
+void print_list(node *head);
+void free_list(node *head);
 
 
 #endif
