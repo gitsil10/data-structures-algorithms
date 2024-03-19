@@ -51,6 +51,11 @@ node *create_node(int data) {
     return new_node;
 }
 
+node *insert_node(node *head, int data) {
+    node *new_node = create_node(data);
+    new_node->next = head;
+    return new_node;
+}
 
 
 #endif
