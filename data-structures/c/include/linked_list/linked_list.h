@@ -43,5 +43,14 @@ node *delete_node(node *head, int data);
 void print_list(node *head);
 void free_list(node *head);
 
+//definitions
+node *create_node(int data) {
+    node *new_node = (node *)malloc(sizeof(node));
+    new_node->data = data;
+    new_node->next = NULL;
+    return new_node;
+}
+
+
 
 #endif
